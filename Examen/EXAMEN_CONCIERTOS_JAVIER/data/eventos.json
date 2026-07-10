@@ -1,0 +1,106 @@
+{
+  "categorias": [
+    { "id": 1783106528253, "nombre": "Rock", "descripcion": "Conciertos de rock y metal" },
+    { "id": 1783106528254, "nombre": "Electrónica", "descripcion": "Eventos con DJs y música electrónica" },
+    { "id": 1783106528255, "nombre": "Pop", "descripcion": "Conciertos comerciales y festivales pop" },
+    { "id": 1783106528256, "nombre": "Jazz", "descripcion": "Música jazz y blues en vivo" },
+    { "id": 1783106528257, "nombre": "Clásica", "descripcion": "Conciertos de música clásica y orquestal" },
+    { "id": 1783106528258, "nombre": "Reguetón", "descripcion": "Artistas de reguetón y trap latino" },
+    { "id": 1783106528259, "nombre": "Salsa", "descripcion": "Salsa, bachata y ritmos caribeños" },
+    { "id": 1783106528260, "nombre": "Indie", "descripcion": "Bandas independientes y alternativas" },
+    { "id": 1783106528261, "nombre": "Festival", "descripcion": "Festivales multigénero al aire libre" }
+  ],
+  "eventos": [
+    {
+      "id": 1783106528264, "codigo": "EVT001", "nombre": "Infernal Rock Night",
+      "categoriaId": 1783106528253, 
+      "precio": 120000, "fecha": "2026-11-10", "hora": "20:00",
+      "ciudad": "Bogotá", "imagen": "assets/img/concierto.jpg",
+      "descripcion": "Una noche de rock con bandas nacionales y sonido potente."
+    },
+    {
+      "id": 1783106528265, "codigo": "EVT002", "nombre": "Electro Vibes",
+      "categoriaId": 1783106528254, 
+      "precio": 95000, "fecha": "2026-12-05", "hora": "22:00",
+      "ciudad": "Medellín", "imagen": "assets/img/electro.avif",
+      "descripcion": "Festival con DJs, luces láser y ambiente nocturno."
+    },
+    {
+      "id": 1783106528266, "codigo": "EVT003", "nombre": "Pop Dreams",
+      "categoriaId": 1783106528255, 
+      "precio": 108000, "fecha": "2026-10-18", "hora": "19:30",
+      "ciudad": "Cali", "imagen": "assets/img/images.jpeg",
+      "descripcion": "Un show pop con artistas emergentes y sonidos energéticos."
+    },
+    {
+      "id": 1783106528267, "codigo": "EVT004", "nombre": "Digital Circus",
+      "categoriaId": 1783106528261, 
+      "precio": 150000, "fecha": "2026-12-20", "hora": "21:00",
+      "ciudad": "Bogotá", "imagen": "assets/img/digital-circus.png",
+      "descripcion": "Un espectáculo circense digital con visuals, luces y música electrónica en vivo."
+    },
+    {
+      "id": 1783106528268, "codigo": "EVT005", "nombre": "Rock Sinfónico",
+      "categoriaId": 1783106528253, 
+      "precio": 135000, "fecha": "2026-11-25", "hora": "19:00",
+      "ciudad": "Medellín", "imagen": "assets/img/rock.webp",
+      "descripcion": "Rock sinfónico con orquesta en vivo y coro gospel."
+    },
+    {
+      "id": 1783106528269, "codigo": "EVT006", "nombre": "Reggaeton Nights",
+      "categoriaId": 1783106528258,
+      "precio": 85000, "fecha": "2026-12-12", "hora": "23:00",
+      "ciudad": "Barranquilla", "imagen": "assets/img/regueton.webp",
+      "descripcion": "La noche más esperada con los mejores artistas del reguetón."
+    },
+    {
+      "id": 1783106528270, "codigo": "EVT007", "nombre": "Salsa Brava",
+      "categoriaId": 1783106528259,
+      "precio": 75000, "fecha": "2026-11-05", "hora": "21:00",
+      "ciudad": "Cali", "imagen": "assets/img/salsa.jpg",
+      "descripcion": "Noche de salsa brava con las mejores orquestas de la ciudad."
+    },
+    {
+      "id": 1783106528271, "codigo": "EVT008", "nombre": "Jazz & Blues",
+      "categoriaId": 1783106528256,
+      "precio": 90000, "fecha": "2026-10-30", "hora": "20:00",
+      "ciudad": "Bogotá", "imagen": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fit=crop&w=800&q=80",
+      "descripcion": "Una velada íntima con jazz fusión y blues en vivo."
+    },
+    {
+      "id": 1783106528272, "codigo": "EVT009", "nombre": "Concierto Clásico",
+      "categoriaId": 1783106528257,
+      "precio": 110000, "fecha": "2026-12-15", "hora": "18:00",
+      "ciudad": "Bogotá", "imagen": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?fit=crop&w=800&q=80",
+      "descripcion": "Orquesta filarmónica interpretando las obras maestras de la música clásica."
+    },
+    {
+      "id": 1783106528273, "codigo": "EVT010", "nombre": "Indie Underground",
+      "categoriaId": 1783106528260,
+      "precio": 70000, "fecha": "2026-11-20", "hora": "21:30",
+      "ciudad": "Medellín", "imagen": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?fit=crop&w=800&q=80",
+      "descripcion": "Bandas independientes emergentes con sonidos frescos y alternativos."
+    },
+    {
+      "id": 1783106528274, "codigo": "EVT011", "nombre": "Techno Rave",
+      "categoriaId": 1783106528254, 
+      "precio": 100000, "fecha": "2027-01-15", "hora": "23:00",
+      "ciudad": "Cartagena", "imagen": "https://images.unsplash.com/photo-1574169208507-84376144848b?fit=crop&w=800&q=80",
+      "descripcion": "Rave al aire libre con DJs internacionales y producción audiovisual."
+    },
+    {
+      "id": 1783106528275, "codigo": "EVT012", "nombre": "Pop Star",
+      "categoriaId": 1783106528255, 
+      "precio": 98000, "fecha": "2026-12-08", "hora": "20:00",
+      "ciudad": "Bucaramanga", "imagen": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?fit=crop&w=800&q=80",
+      "descripcion": "Grandes éxitos del pop actual con invitados sorpresa."
+    },
+    {
+      "id": 1783106528276, "codigo": "EVT013", "nombre": "Festival de Verano",
+      "categoriaId": 1783106528261, 
+      "precio": 180000, "fecha": "2027-02-20", "hora": "15:00",
+      "ciudad": "Santa Marta", "imagen": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?fit=crop&w=800&q=80",
+      "descripcion": "Festival multigénero al aire libre con playa, sol y música todo el día."
+    }
+  ]
+}

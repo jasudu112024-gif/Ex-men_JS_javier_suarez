@@ -1,0 +1,117 @@
+
+body {
+    background-color: #111827;
+    color: #ffffff;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.reporte-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+}
+
+.reporte-container h1, 
+.reporte-container h2 {
+    color: #f7d34e;
+    margin-bottom: 10px;
+}
+
+.reporte-desc {
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.reporte-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.control-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.control-group select, 
+.control-group button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #4b5563;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.control-group select {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.control-group button {
+    background: #f7d34e;
+    color: #111827;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.control-group button:hover {
+    background: #e0bd36;
+}
+
+
+.reporte-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.reporte-tabla th, 
+.reporte-tabla td {
+    padding: 12px;
+    border-bottom: 1px solid #374151;
+}
+
+.reporte-tabla th {
+    color: #f7d34e;
+    border-bottom: 2px solid #f7d34e;
+}
+
+.total-row {
+    font-weight: bold;
+    background: #111827;
+    color: #f7d34e;
+    display: none; 
+}
+
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: #9ca3af; }
+.padding-30 { padding: 30px; }
+.bold-white { font-weight: bold; color: #ffffff; }
+.cant-destacada { color: #ffeea8; }
+
+.error-msg {
+    color: #f87171;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    display: none;
+}

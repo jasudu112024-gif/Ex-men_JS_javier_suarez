@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Reporte de Ventas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/reporte_ventas.css">
+</head>
+<body>
+    <div class="container">
+        <a href="eventos.html" class="secondary-button">⬅️ Volver al Panel Principal</a>
+    
+        <h1>📊 Reporte de Ventas Mensual</h1>
+        <p>Consulta el consolidado de entradas vendidas y dinero recaudado agrupado por concierto.</p>
+
+    <div class="reporte-row">
+        <div class="control-group">
+            <label for="select-anio">Año</label>
+            <select id="select-anio">
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="select-mes">Mes</label>
+            <select id="select-mes">
+                <option value="0">Enero</option>
+                <option value="1">Febrero</option>
+                <option value="2">Marzo</option>
+                <option value="3">Abril</option>
+                <option value="4">Mayo</option>
+                <option value="5">Junio</option>
+                <option value="6">Julio</option>
+                <option value="7">Agosto</option>
+                <option value="8">Septiembre</option>
+                <option value="9">Octubre</option>
+                <option value="10">Noviembre</option>
+                <option value="11">Diciembre</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <button id="btn-buscar">Generar Reporte</button>
+        </div>
+    </div>
+
+    <div id="mensaje-vacio" class="error-msg">No existen ventas para el período seleccionado.</div>
+
+    <table class="reporte-tabla">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre del Concierto</th>
+                <th class="text-center">Cantidad Vendida</th>
+                <th class="text-right">Valor Total</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-cuerpo">
+            <tr>
+                <td colspan="4" class="text-muted padding-30">
+                    Selecciona los parámetros de búsqueda para mostrar los resultados.
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr id="fila-total" class="total-row">
+                <td colspan="2" class="text-right">TOTALIZACIÓN GENERAL:</td>
+                <td id="total-cantidad" class="text-center">0</td>
+                <td id="total-dinero" class="text-right">$0</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script src="../js/reporte_ventas.js"></script>
+</body>
+</html>

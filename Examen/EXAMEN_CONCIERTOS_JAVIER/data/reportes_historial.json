@@ -1,0 +1,148 @@
+[
+    {
+      "id": 1672833600000,
+      "fecha": "2025-01-04T15:30:00.000Z",
+      "cliente": { "nombre": "Andrés Gómez", "email": "andres@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT001", "nombreEvento": "Infernal Rock Night", "cantidad": 4, "precio": 120000 },
+        { "codigoEvento": "EVT002", "nombreEvento": "Electro Vibes", "cantidad": 2, "precio": 95000 }
+      ]
+    },
+    {
+        "id": 1704888000000,
+        "fecha": "2025-01-10T20:00:00.000Z",
+        "cliente": { "nombre": "Carlos Pérez", "email": "carlos@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT001", "nombreEvento": "Infernal Rock Night", "cantidad": 3, "precio": 120000 }
+        ]
+      },
+    {
+        "id": 1689336000000,
+        "fecha": "2025-01-14T18:45:00.000Z",
+        "cliente": { "nombre": "Estefanía Arias", "email": "estefa@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT004", "nombreEvento": "Digital Circus", "cantidad": 2, "precio": 150000 }
+        ]
+      },
+    {
+      "id": 1678881600000,
+      "fecha": "2025-03-15T19:00:00.000Z",
+      "cliente": { "nombre": "Mariana Restrepo", "email": "mariana@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT003", "nombreEvento": "Pop Dreams", "cantidad": 5, "precio": 108000 }
+      ]
+    },
+    {
+        "id": 1684584000000,
+        "fecha": "2025-03-20T21:00:00.000Z",
+        "cliente": { "nombre": "Juan Carlos Soler", "email": "juan@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT007", "nombreEvento": "Salsa Brava", "cantidad": 3, "precio": 75000 }
+        ]
+      },
+    {
+      "id": 1684584000000,
+      "fecha": "2025-05-20T21:00:00.000Z",
+      "cliente": { "nombre": "Juan Carlos Soler", "email": "juan@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT007", "nombreEvento": "Salsa Brava", "cantidad": 3, "precio": 75000 }
+      ]
+    },
+    {
+        "id": 1678881600000,
+        "fecha": "2025-05-15T19:00:00.000Z",
+        "cliente": { "nombre": "Mariana Restrepo", "email": "mariana@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT003", "nombreEvento": "Pop Dreams", "cantidad": 5, "precio": 108000 }
+        ]
+      },
+    {
+      "id": 1689336000000,
+      "fecha": "2025-07-14T18:45:00.000Z",
+      "cliente": { "nombre": "Estefanía Arias", "email": "estefa@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT004", "nombreEvento": "Digital Circus", "cantidad": 2, "precio": 150000 }
+      ]
+    },
+    {
+        "id": 1684584000000,
+        "fecha": "2025-07-20T21:00:00.000Z",
+        "cliente": { "nombre": "Juan Carlos Soler", "email": "juan@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT007", "nombreEvento": "Salsa Brava", "cantidad": 3, "precio": 75000 }
+        ]
+      },
+    {
+      "id": 1704888000000,
+      "fecha": "2026-01-10T20:00:00.000Z",
+      "cliente": { "nombre": "Carlos Pérez", "email": "carlos@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT001", "nombreEvento": "Infernal Rock Night", "cantidad": 3, "precio": 120000 }
+      ]
+    },
+    {
+      "id": 1707746400000,
+      "fecha": "2026-02-12T22:30:00.000Z",
+      "cliente": { "nombre": "Luisa Fernanda", "email": "luisa@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT002", "nombreEvento": "Electro Vibes", "cantidad": 6, "precio": 95000 }
+      ]
+    },
+    {
+        "id": 1712232000000,
+        "fecha": "2026-02-04T16:00:00.000Z",
+        "cliente": { "nombre": "Diana Tobón", "email": "diana@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT004", "nombreEvento": "Digital Circus", "cantidad": 4, "precio": 150000 }
+        ]
+      },
+    {
+        "id": 1711108800000,
+        "fecha": "2026-02-22T19:30:00.000Z",
+        "cliente": { "nombre": "Mateo Bermúdez", "email": "mateo@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT003", "nombreEvento": "Pop Dreams", "cantidad": 2, "precio": 108000 }
+        ]
+      },
+    {
+      "id": 1711108800000,
+      "fecha": "2026-03-22T19:30:00.000Z",
+      "cliente": { "nombre": "Mateo Bermúdez", "email": "mateo@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT003", "nombreEvento": "Pop Dreams", "cantidad": 2, "precio": 108000 }
+      ]
+    },
+    {
+      "id": 1712232000000,
+      "fecha": "2026-04-04T16:00:00.000Z",
+      "cliente": { "nombre": "Diana Tobón", "email": "diana@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT004", "nombreEvento": "Digital Circus", "cantidad": 4, "precio": 150000 }
+      ]
+    },
+    {
+      "id": 1716638400000,
+      "fecha": "2026-05-25T19:00:00.000Z",
+      "cliente": { "nombre": "Santiago Uribe", "email": "santi@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT005", "nombreEvento": "Rock Sinfónico", "cantidad": 5, "precio": 135000 }
+      ]
+    },
+    {
+        "id": 1718233200000,
+        "fecha": "2026-05-12T23:00:00.000Z",
+        "cliente": { "nombre": "Valentina Ríos", "email": "vale@mail.com" },
+        "items": [
+          { "codigoEvento": "EVT006", "nombreEvento": "Reggaeton Nights", "cantidad": 8, "precio": 85000 }
+        ]
+      },
+    
+    {
+      "id": 1718233200000,
+      "fecha": "2026-06-12T23:00:00.000Z",
+      "cliente": { "nombre": "Valentina Ríos", "email": "vale@mail.com" },
+      "items": [
+        { "codigoEvento": "EVT006", "nombreEvento": "Reggaeton Nights", "cantidad": 8, "precio": 85000 }
+      ]
+    }
+  ]

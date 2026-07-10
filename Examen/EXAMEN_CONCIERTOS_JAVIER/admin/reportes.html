@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes | Administración</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body class="admin-page">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="brand">
+        <span class="brand-title">INFERNAL</span>
+        <span class="brand-subtitle">MANAGEMENT</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="categorias.html">Categorías</a>
+        <a href="eventos.html">Eventos</a>
+        <a class="active" href="reportes.html">Reportes</a>
+      </nav>
+      <button id="logout-button" class="sidebar-button" type="button">Cerrar sesión</button>
+      <a href="../index.html" class="sidebar-button back-button" style="text-align:center;">Volver al inicio</a>
+    </aside>
+
+    <main class="admin-content">
+      <div class="admin-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <p class="eyebrow">Reportes de ventas</p>
+          <h1>Reportes</h1>
+        </div>
+        <a href="reporte_ventas.html" class="primary-button" style="text-decoration: none; display: inline-block; padding: 12px 20px; background-color: #f7d34e; color: #111827; font-weight: bold; border-radius: 6px; font-size: 14px; transition: background-color 0.2s;">
+          📊 Ver Reporte Mensual Agrupado
+        </a>
+      </div>
+
+      <div class="table-panel">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Ciudad</th>
+              <th>Total</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody id="sales-body"></tbody>
+        </table>
+      </div>
+
+      <div class="admin-header" style="margin-top:2rem;">
+        <div>
+          <p class="eyebrow">Buzón de mensajes</p>
+          <h1>Mensajes de contacto</h1>
+        </div>
+      </div>
+      <div class="table-panel">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Asunto</th>
+              <th>Mensaje</th>
+            </tr>
+          </thead>
+          <tbody id="messages-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/registro.js"></script>
+  <script defer src="../js/data-seed.js"></script>
+  <script defer src="../js/admin.js"></script>
+</body>
+</html>

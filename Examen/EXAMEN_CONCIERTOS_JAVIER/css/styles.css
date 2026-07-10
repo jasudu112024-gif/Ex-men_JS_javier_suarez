@@ -1,0 +1,1391 @@
+﻿/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTES Y VARIABLES (Estilo Infernal/Teatral)
+   ========================================================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;600;800&display=swap');
+
+   :root {
+     --fondo-principal: #120803;    /* Negro con matiz rojizo cálido */
+     --fondo-sidebar: #210f0f;      /* Vino tinto muy oscuro */
+     --rojo-infernal: #8b1818;      /* Rojo fuego/sangre para acciones */
+     --rojo-hover: #a81f1f;         /* Rojo brillante para estados hover */
+     --dorado-brillante: #f9d24b;   /* Dorado destacado para títulos */
+     --dorado-suave: #d8c28b;       /* Dorado opaco para textos secundarios */
+     --crema-texto: #eee2c5;        /* Blanco cálido para legibilidad */
+     --fondo-inputs: rgba(28, 11, 11, 0.6);
+   }
+   
+   * {
+     box-sizing: border-box;
+   }
+   
+   body {
+     margin: 0;
+     padding: 0;
+     background-color: var(--fondo-principal);
+     color: var(--crema-texto);
+     font-family: 'Inter', system-ui, sans-serif;
+     line-height: 1.5;
+   }
+   
+   .hidden {
+     display: none !important;
+   }
+   
+   /* ==========================================================================
+      2. ESTILOS BASE Y COMPONENTES REUTILIZABLES
+      ========================================================================== */
+   .container {
+     width: min(1200px, 100% - 2rem);
+     margin: 0 auto;
+     padding: 2rem 0;
+   }
+   
+   .eyebrow {
+     margin: 0 0 0.5rem;
+     color: var(--dorado-suave);
+     letter-spacing: 0.25em;
+     text-transform: uppercase;
+     font-size: 0.75rem;
+     font-weight: 600;
+   }
+   
+   h1, h2, h3, .brand-title {
+     font-family: 'Cinzel', serif;
+     color: var(--dorado-brillante);
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+     margin-top: 0;
+   }
+   
+   /* Botones Universales Infernales */
+   .primary-button {
+     background: var(--rojo-infernal);
+     color: #ffeea8;
+     border: 1px solid var(--dorado-brillante);
+     padding: 0.75rem 1.5rem;
+     border-radius: 0.6rem;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 0.08em;
+     cursor: pointer;
+     transition: all 0.2s ease;
+   }
+   
+   .primary-button:hover {
+     background: var(--rojo-hover);
+     box-shadow: 0 0 15px rgba(139, 24, 24, 0.6);
+   }
+   
+   .secondary-button {
+     background: transparent;
+     color: var(--dorado-suave);
+     border: 1px solid rgba(249, 210, 75, 0.3);
+     padding: 0.6rem 1.2rem;
+     border-radius: 0.5rem;
+     font-weight: 600;
+     text-decoration: none;
+     display: inline-block;
+     transition: all 0.2s;
+   }
+   
+   .secondary-button:hover {
+     border-color: var(--dorado-brillante);
+     color: #fff;
+     background: rgba(255, 255, 255, 0.02);
+   }
+   
+   /* Formularios Globales */
+   .form-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 1.25rem;
+     margin-bottom: 1.5rem;
+   }
+   
+   .full-width {
+     grid-column: 1 / -1;
+   }
+   
+   label {
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+     color: var(--dorado-suave);
+     font-size: 0.8rem;
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+     font-weight: 600;
+   }
+   
+   input, select, textarea {
+     background: var(--fondo-inputs);
+     border: 1px solid rgba(249, 210, 75, 0.15);
+     border-radius: 0.5rem;
+     padding: 0.75rem 1rem;
+     color: #fff;
+     font-family: 'Inter', sans-serif;
+     font-size: 0.95rem;
+     transition: all 0.2s ease;
+   }
+   
+   input:focus, select:focus, textarea:focus {
+     outline: none;
+     border-color: var(--dorado-brillante);
+     box-shadow: 0 0 8px rgba(249, 210, 75, 0.2);
+     background: rgba(0, 0, 0, 0.5);
+   }
+   
+   select option {
+     background: var(--fondo-sidebar);
+     color: var(--crema-texto);
+   }
+   
+   /* Mensajes de Estado */
+   .success-message {
+     margin-top: 0.75rem;
+     padding: 0.75rem;
+     background: rgba(6, 95, 70, 0.3);
+     border: 1px solid #065f46;
+     color: #34d399;
+     border-radius: 0.5rem;
+     text-align: center;
+   }
+   
+   .error-message {
+     margin-top: 0.5rem;
+     padding: 0.5rem;
+     background: rgba(153, 27, 27, 0.3);
+     border: 1px solid #991b1b;
+     color: #f87171;
+     border-radius: 0.4rem;
+     text-align: center;
+     font-size: 0.85rem;
+   }
+   
+   /* ==========================================================================
+      3. ESTRUCTURA DE LA VISTA PÚBLICA (Navegación y Layout)
+      ========================================================================== */
+   .site-header {
+     background: #110707;
+     border-bottom: 1px solid rgba(249, 210, 75, 0.15);
+     padding: 1.25rem 0;
+   }
+   
+   .header-inner {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0;
+   }
+   
+   .site-header .brand {
+     font-family: 'Cinzel', serif;
+     color: var(--dorado-brillante);
+     font-size: 1.6rem;
+     font-weight: 800;
+     text-decoration: none;
+     letter-spacing: 0.05em;
+   }
+   
+   .main-nav {
+     display: flex;
+     gap: 1.5rem;
+   }
+   
+   .main-nav a {
+     color: var(--crema-texto);
+     text-decoration: none;
+     text-transform: uppercase;
+     font-size: 0.85rem;
+     font-weight: 600;
+     letter-spacing: 0.1em;
+     transition: color 0.2s;
+   }
+   
+   .main-nav a:hover {
+     color: var(--dorado-brillante);
+   }
+   
+   .header-actions {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+   }
+   
+   .cart-toggle {
+     background: var(--rojo-infernal);
+     color: #fff;
+     border: 1px solid var(--dorado-brillante);
+     padding: 0.6rem 1.2rem;
+     border-radius: 0.5rem;
+     font-weight: 700;
+     cursor: pointer;
+     transition: background 0.2s;
+   }
+   
+   .cart-toggle:hover {
+     background: var(--rojo-hover);
+   }
+   
+   /* Diseño Asimétrico con Carrito Lateral */
+   .public-layout {
+     display: flex;
+     gap: 2.5rem;
+     align-items: flex-start;
+   }
+   
+   .public-panel {
+     flex: 1;
+     min-width: 0;
+   }
+   
+   /* Hero Sección */
+   .hero-card {
+     background: linear-gradient(135deg, rgba(33, 15, 15, 0.6) 0%, rgba(18, 8, 3, 0.8) 100%);
+     border: 1px solid rgba(249, 210, 75, 0.1);
+     padding: 3rem 2rem;
+     border-radius: 1rem;
+     margin-bottom: 2.5rem;
+     text-align: center;
+   }
+   
+   .hero-card h1 {
+     font-size: 2.5rem;
+     text-shadow: 0 0 15px rgba(139, 24, 24, 0.5);
+   }
+   
+   .hero-card p {
+     color: var(--crema-texto);
+     max-width: 600px;
+     margin: 0 auto;
+     opacity: 0.9;
+   }
+   
+   /* Filtros */
+   .filters-panel {
+     background: rgba(33, 15, 15, 0.4);
+     border: 1px solid rgba(249, 210, 75, 0.08);
+     padding: 1.5rem;
+     border-radius: 1rem;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1.25rem;
+     margin-bottom: 2.5rem;
+   }
+   
+   .filter-group {
+     flex: 1;
+     min-width: 180px;
+   }
+   
+   .filter-group input, .filter-group select {
+     width: 100%;
+   }
+   
+   /* Rejilla de Conciertos */
+   .events-panel {
+     margin-bottom: 4rem;
+   }
+   
+   .events-panel h2 {
+     font-size: 1.8rem;
+     border-bottom: 1px solid rgba(249, 210, 75, 0.15);
+     padding-bottom: 0.5rem;
+     margin-bottom: 1.5rem;
+   }
+   
+   .events-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+     gap: 1.5rem;
+   }
+   
+   .empty-results {
+     grid-column: 1 / -1;
+     text-align: center;
+     padding: 4rem;
+     color: var(--dorado-suave);
+     font-style: italic;
+   }
+   
+   /* Contacto Público */
+   .contact-section {
+     border-top: 1px solid rgba(249, 210, 75, 0.1);
+     padding-top: 2.5rem;
+   }
+   
+   .contact-form {
+     background: rgba(33, 15, 15, 0.3);
+     border: 1px solid rgba(249, 210, 75, 0.08);
+     border-radius: 1rem;
+     padding: 2rem;
+     max-width: 100%;
+   }
+   
+   /* ==========================================================================
+      4. PANEL DEL CARRITO LATERAL
+      ========================================================================== */
+   .cart-panel {
+     width: 380px;
+     background: var(--fondo-sidebar);
+     border: 1px solid rgba(249, 210, 75, 0.15);
+     border-radius: 1rem;
+     padding: 1.75rem;
+     position: sticky;
+     top: 2rem;
+     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+   }
+   
+   .cart-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 1.5rem;
+     border-bottom: 1px solid rgba(249, 210, 75, 0.1);
+     padding-bottom: 0.75rem;
+   }
+   
+   .cart-header h2 {
+     font-size: 1.3rem;
+     margin: 0;
+   }
+   
+   .cart-close-button {
+     background: transparent;
+     border: 1px solid rgba(249, 210, 75, 0.3);
+     color: var(--dorado-suave);
+     padding: 0.3rem 0.75rem;
+     border-radius: 0.4rem;
+     cursor: pointer;
+   }
+   
+   .cart-close-button:hover {
+     color: #fff;
+     border-color: var(--dorado-brillante);
+   }
+   
+   .cart-items {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     max-height: 300px;
+     overflow-y: auto;
+     margin-bottom: 1.5rem;
+   }
+   
+   .cart-item {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.75rem;
+     background: rgba(0, 0, 0, 0.2);
+     border: 1px solid rgba(249, 210, 75, 0.05);
+     border-radius: 0.5rem;
+   }
+   
+   .cart-item strong {
+     color: #fff;
+   }
+   
+   .cart-summary {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem 0;
+     border-top: 1px solid rgba(249, 210, 75, 0.12);
+     margin-bottom: 1.5rem;
+   }
+   
+   .cart-summary strong {
+     font-size: 1.4rem;
+     color: var(--dorado-brillante);
+     font-family: 'Cinzel', serif;
+   }
+   
+   .checkout-form {
+     border-top: 1px solid rgba(249, 210, 75, 0.15);
+     padding-top: 1.25rem;
+   }
+   
+   .checkout-form h3 {
+     font-size: 1rem;
+     margin-bottom: 1rem;
+   }
+   
+   /* ==========================================================================
+      5. PANEL DE ADMINISTRACIÓN OSCURO (Dashboard e Interfaces Internas)
+      ========================================================================== */
+   body.admin-page {
+     background: var(--fondo-principal);
+   }
+   
+   .admin-layout {
+     display: grid;
+     grid-template-columns: 280px 1fr;
+     min-height: 100vh;
+   }
+   
+   .admin-sidebar {
+     background: var(--fondo-sidebar);
+     border-right: 1px solid rgba(249, 210, 75, 0.12);
+     padding: 2rem 1.5rem;
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+   }
+   
+   .admin-sidebar .brand-title {
+     font-size: 1.9rem;
+     font-weight: 800;
+     text-shadow: 0 0 10px rgba(249, 210, 75, 0.2);
+   }
+   
+   .admin-sidebar .brand-subtitle {
+     color: var(--dorado-suave);
+     font-size: 0.85rem;
+     letter-spacing: 0.25em;
+     font-weight: 600;
+   }
+   
+   .sidebar-nav {
+     display: flex;
+     flex-direction: column;
+     gap: 0.75rem;
+   }
+   
+   .sidebar-nav a {
+     display: inline-flex;
+     align-items: center;
+     color: var(--dorado-suave);
+     text-decoration: none;
+     padding: 0.85rem 1rem;
+     border-radius: 0.75rem;
+     font-weight: 600;
+     transition: all 0.2s ease;
+   }
+   
+   .sidebar-nav a:hover {
+     background: rgba(255, 176, 64, 0.12);
+     color: #ffeea8;
+     border-left: 3px solid var(--dorado-brillante);
+   }
+   
+   .sidebar-button {
+     background: var(--rojo-infernal);
+     color: #f6e1d6;
+     border: 1px solid rgba(249, 210, 75, 0.2);
+     padding: 0.85rem 1rem;
+     border-radius: 0.75rem;
+     text-transform: uppercase;
+     font-weight: bold;
+     cursor: pointer;
+     text-decoration: none;
+     transition: all 0.2s;
+   }
+   
+   .sidebar-button:hover {
+     background: var(--rojo-hover);
+     box-shadow: 0 0 12px rgba(139, 24, 24, 0.5);
+   }
+   
+   .admin-content {
+     padding: 2.5rem;
+   }
+   
+   /* Tarjeta contenedora de formularios en Admin */
+   .form-card {
+     background: rgba(255, 255, 255, 0.02);
+     border: 1px solid rgba(249, 210, 75, 0.08);
+     border-radius: 1rem;
+     padding: 2rem;
+     margin-bottom: 2.5rem;
+   }
+   
+   /* Panel de Login */
+   .auth-panel {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 75vh;
+   }
+   
+   .auth-card {
+     background: rgba(33, 15, 15, 0.5);
+     border: 1px solid rgba(249, 210, 75, 0.15);
+     border-radius: 1.25rem;
+     padding: 2.5rem;
+     width: 100%;
+     max-width: 400px;
+   }
+   
+   .auth-card h1 {
+     margin-bottom: 1.5rem;
+     font-size: 1.8rem;
+   }
+   
+   .auth-card form {
+     display: flex;
+     flex-direction: column;
+     gap: 1.25rem;
+   }
+   
+   .auth-card .primary-button {
+     width: 100%;
+
+     margin-top: 1rem;
+   }
+   
+   .error-message {
+     color: #ff6b6b;
+     font-size: 0.9rem;
+     margin-top: 1rem;
+     text-align: center;
+   }
+   
+   /* ==========================================================================
+      6. TABLAS DE DATOS (Estilo Limpio y Oscuro)
+      ========================================================================== */
+   .table-panel {
+     background: rgba(255, 255, 255, 0.01);
+     border: 1px solid rgba(249, 210, 75, 0.08);
+     border-radius: 1rem;
+     padding: 1.5rem;
+     overflow-x: auto;
+   }
+   
+   .scrollable {
+     max-height: 450px;
+     overflow-y: auto;
+   }
+   
+   .data-table {
+     width: 100%;
+     border-collapse: collapse;
+     min-width: 860px;
+   }
+   
+   .data-table th,
+   .data-table td {
+     padding: 1.1rem 1.25rem;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+     text-align: left;
+   }
+   
+   .data-table th {
+     font-size: 0.8rem;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+     color: var(--dorado-suave);
+     font-weight: 600;
+     background: rgba(0, 0, 0, 0.15);
+     position: sticky;
+     top: 0;
+     z-index: 1;
+   }
+   
+   .data-table tbody tr:hover {
+     background: rgba(255, 255, 255, 0.03);
+   }
+   
+   .data-table td {
+     color: var(--crema-texto);
+     font-size: 0.95rem;
+   }
+   
+   /* Acciones de filas de tabla botones o enlaces de borrar/editar) */
+   .data-table td a, 
+   .data-table td button {
+     color: var(--dorado-brillante);
+     background: transparent;
+     border: none;
+     cursor: pointer;
+     margin-right: 1rem;
+     text-decoration: underline;
+     font-weight: 600;
+   }
+   
+   .data-table td a:hover, 
+   .data-table td button:hover {
+     color: #fff;
+   }
+   
+   /* ==========================================================================
+      7. ELEMENTOS ADICIONALES Y RESPONSIVE INCORPORADO
+      ========================================================================== */
+   .admin-footer {
+     margin-top: 3rem;
+     color: rgba(216, 194, 139, 0.4);
+     text-align: center;
+     font-size: 0.85rem;
+   }
+   
+   @media (max-width: 1024px) {
+     .admin-layout {
+       grid-template-columns: 1fr;
+     }
+     
+     .admin-sidebar {
+       border-right: none;
+       border-bottom: 1px solid rgba(249, 210, 75, 0.12);
+     }
+   
+     .metric-grid {
+       grid-template-columns: repeat(2, 1fr);
+     }
+   }
+   
+   @media (max-width: 640px) {
+     .metric-grid {
+       grid-template-columns: 1fr;
+     }
+     
+     .admin-header {
+       flex-direction: column;
+       align-items: flex-start;
+     }
+     
+     .live-panel {
+       text-align: left;
+       width: 100%;
+     }
+   }
+
+   /* ==========================================================================
+   8. VISTA PÚBLICA / CLIENTE (Estilo "Sonic Revolution")
+   ========================================================================== */
+
+/* Cambiar el fondo global de la página pública para que sea oscuro */
+/* ==========================================================================
+   8. VISTA PÚBLICA / CLIENTE (Estilo "Sonic Revolution" con Fondo)
+   ========================================================================== */
+
+/* Cambiar el fondo global imagen de fondo */
+body:not(.admin-page) {
+  background-image: 
+    linear-gradient(to bottom, rgba(18, 5, 5, 0.85), rgba(18, 5, 5, 0.95)), 
+    url('../assets/img/dark\ hero..png'); 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f0e6e6;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ajustar el contenedor general del cliente */
+body:not(.admin-page) .container {
+  max-width: 1200px;
+  padding: 3rem 1.5rem;
+}
+
+/* Estilizar el encabezado (Navbar) */
+.site-header {
+  background: #110707 !important; /* Más oscuro que el fondo */
+  border-bottom: 1px solid rgba(229, 193, 88, 0.15);
+  padding: 1.5rem 0;
+}
+
+.site-header h1, 
+.site-header .brand-title {
+  font-family: 'Cinzel', serif;
+  color: #e5c158; /* Dorado */
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.site-header a {
+  color: #f0e6e6;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.site-header a:hover {
+  color: #e5c158;
+}
+
+/* Estilizar el botón del Carrito */
+#cart-counter, 
+.site-header a[href*="carrito"],
+button:contains("Carrito") {
+  background: #800000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e5c158;
+  font-weight: bold;
+}
+
+/* Títulos principales de la vista pública */
+body:not(.admin-page) h1,
+body:not(.admin-page) h2 {
+  font-family: 'Cinzel', serif;
+  color: #e5c158;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+body:not(.admin-page) h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(128, 0, 0, 0.6);
+  margin-bottom: 1rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  background: #f9fafb;
+  color: #1f2937;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.events-panel h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+  color: #1f2937;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: #1f2937;
+}
+
+.contact-desc {
+  margin: 0 auto 1.5rem;
+  color: #6b7280;
+  max-width: 32rem;
+}
+
+.contact-form {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  background: #f9fafb;
+  color: #1f2937;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.empty-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+
+/* cart styling */
+.cart-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.cart-backdrop.active {
+  display: block;
+}
+
+.cart-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cart-panel.hidden {
+  display: none;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #1f2937;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  max-height: 24rem;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 0.6rem;
+}
+
+.cart-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.cart-item span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.cart-summary span {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.cart-summary strong {
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #9ca3af;
+  padding: 2rem;
+}
+
+.checkout-form {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.checkout-form h3 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  color: #110707;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  background: #f9fafb;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.primary-button {
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primary-button:hover {
+  background: #4f46e5;
+}
+
+.success-message {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #fef2f2;
+  color: #991b1b;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.auth-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 193, 7, 0.12);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h1 {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  color: #f4e3b7;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #d9c38c;
+}
+
+.auth-card input {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #f7d34e;
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 193, 7, 0.10);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-card .form-grid label {
+  color: #d9c38c;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus {
+  outline: none;
+  border-color: #f7d34e;
+}
+
+.form-card select {
+  color: #f7d34e;
+}
+
+.form-card select option {
+  color: #333;
+  background: #fff;
+}
+
+.form-card .primary-button,
+.form-card .secondary-button {
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.action-button {
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.action-button.edit {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  margin-right: 0.4rem;
+}
+
+.action-button.delete {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+#home-hero,
+#admin-panel {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #6b7280;
+}
+
+/* administración estilo oscuro */
+body.admin-page {
+  font-family: Inter, system-ui, sans-serif;
+  background: #120803;
+  color: #f4e3b7;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  background: #210f0f;
+  border-right: 1px solid rgba(255, 193, 7, 0.12);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brand-title {
+  font-size: 1.9rem;
+  letter-spacing: 0.18em;
+  color: #f9d24b;
+  font-weight: 800;
+}
+
+.brand-subtitle {
+  color: #c69f3d;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #d9c38c;
+  text-decoration: none;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a.active,
+.sidebar-nav a:hover {
+  background: rgba(255, 176, 64, 0.12);
+  color: #ffeea8;
+}
+
+.sidebar-button {
+  margin-top: auto;
+  background: #8b1818;
+  color: #f6e1d6;
+  border: none;
+  padding: 0.95rem 1rem;
+  border-radius: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.admin-content {
+  padding: 2rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.live-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  color: #c9b27d;
+  font-size: 0.85rem;
+}
+
+.live-panel strong {
+  font-size: 1.25rem;
+  color: #f7d34e;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: #f4dba1;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0.04em;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.icon-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f7e6be;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: 0.9rem;
+  cursor: pointer;
+}
+
+.metric-grid,
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card,
+.action-card,
+.table-panel,
+.table-header,
+.table-footer {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 193, 7, 0.10);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.metric-card-large {
+  grid-column: span 2;
+}
+
+.metric-card[data-href] {
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.metric-card[data-href]:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 193, 7, 0.25);
+  transform: translateY(-2px);
+}
+
+.metric-label {
+  display: block;
+  color: #d8c28b;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 2.5rem;
+}
+
+/* Panel de filtros (Buscador, Categoría, Ciudad) */
+body:not(.admin-page) form,
+.filters-panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(229, 193, 88, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+body:not(.admin-page) label {
+  color: #d8c28b;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Estilizar inputs y selects del cliente */
+body:not(.admin-page) input[type="text"],
+body:not(.admin-page) select {
+  background: #1c0b0b;
+  border: 1px solid rgba(229, 193, 88, 0.2);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  min-width: 200px;
+  transition: border-color 0.2s;
+}
+
+body:not(.admin-page) input:focus,
+body:not(.admin-page) select:focus {
+  outline: none;
+  border-color: #e5c158;
+}
+
+/* Grid de Eventos / Próximos Conciertos */
+.events-grid, 
+#events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Estilo de las tarjetas de los eventos (cuando aparezcan) */
+.event-card {
+  background: #1c0b0b;
+  border: 1px solid rgba(229, 193, 88, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  border-color: #e5c158;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos | Conciertos Conectados</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body class="admin-page">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="brand">
+        <span class="brand-title">INFERNAL</span>
+        <span class="brand-subtitle">MANAGEMENT</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" data-section="menu">Dashboard</a>
+        <a href="#" data-section="categorias">Categorías</a>
+        <a class="active" href="#" data-section="eventos">Eventos</a>
+        <a href="#" data-section="ventas">Reportes</a>
+        <a href="#" data-section="mensajes">Mensajes</a>
+      </nav>
+      <button id="logout-button" class="sidebar-button" type="button">Cerrar sesión</button>
+      <a href="../index.html" class="sidebar-button back-button" style="text-align:center;">Volver al inicio</a>
+
+    </aside>
+
+    <main class="admin-content">
+      <section id="menu-section" class="admin-section">
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">Menú administrativo</p>
+            <h1>Bienvenido al panel</h1>
+          </div>
+          <div class="live-panel">
+            <span>Hora actual</span>
+            <strong id="live-time">00:00:00</strong>
+          </div>
+        </div>
+
+        <section class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-label">Categorías</span>
+            <strong id="count-categories">0</strong>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Eventos</span>
+            <strong id="count-events">0</strong>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Ventas</span>
+            <strong id="count-sales">0</strong>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Ingresos</span>
+            <strong id="count-revenue">$0</strong>
+          </article>
+        </section>
+      </section>
+
+      <section id="categorias-section" class="admin-section hidden">
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">Gestión de categorías</p>
+            <h1>Categorías</h1>
+          </div>
+        </div>
+        <form id="category-form" class="form-card">
+          <input type="hidden" name="id" />
+          <div class="form-grid">
+            <label>Nombre <input name="nombre" required /></label>
+            <label>Descripción <input name="descripcion" required /></label>
+          </div>
+          <button type="submit" class="primary-button">Guardar categoría</button>
+          <button type="reset" class="secondary-button">Limpiar</button>
+        </form>
+        <div class="table-panel">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="categories-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="eventos-section" class="admin-section">
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">Gestión de eventos</p>
+            <h1>Eventos</h1>
+          </div>
+        </div>
+        <form id="event-form" class="form-card">
+          <input type="hidden" name="id" />
+          <div class="form-grid">
+            <label>Código <input name="codigo" required /></label>
+            <label>Nombre <input name="nombre" required /></label>
+            <label>Categoría <select name="categoriaId" required></select></label>
+            <label>Ciudad <select id="ciudad-select" name="ciudad" required></select></label>
+            <label>Precio <input name="precio" type="number" min="0" required /></label>
+            <label>Fecha <input name="fecha" type="date" required /></label>
+            <label>Hora <input name="hora" type="time" required /></label>
+            <label>Imagen URL <input name="imagen" placeholder="assets/img/evento.jpg" required /></label>
+            <label class="full-width">Descripción <textarea name="descripcion" rows="3" required></textarea></label>
+          </div>
+          <button type="submit" class="primary-button">Guardar evento</button>
+          <button type="reset" class="secondary-button">Limpiar</button>
+        </form>
+        <div class="table-panel scrollable">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Ciudad</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="events-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="ventas-section" class="admin-section hidden">
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">Reportes de ventas</p>
+            <h1>Ventas</h1>
+          </div>
+        </div>
+        <div class="table-panel scrollable">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Cliente</th>
+                <th>Ciudad</th>
+                <th>Total</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody id="sales-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="mensajes-section" class="admin-section hidden">
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">Buzón de mensajes</p>
+            <h1>Mensajes de contacto</h1>
+          </div>
+        </div>
+        <div class="table-panel scrollable">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Asunto</th>
+                <th>Mensaje</th>
+              </tr>
+            </thead>
+            <tbody id="messages-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/registro.js"></script>
+  <script defer src="../js/data-seed.js"></script>
+  <script defer src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categorías | Administración</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body class="admin-page">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="brand">
+        <span class="brand-title">INFERNAL</span>
+        <span class="brand-subtitle">MANAGEMENT</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="categorias.html">Categorías</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="reportes.html">Reportes</a>
+      </nav>
+      <button id="logout-button" class="sidebar-button" type="button">Cerrar sesión</button>
+      <a href="../index.html" class="sidebar-button back-button" style="text-align:center;">Volver al inicio</a>
+
+    </aside>
+    <main class="admin-content">
+      <div class="admin-header">
+        <div>
+          <p class="eyebrow">Gestión de categorías</p>
+          <h1>Categorías</h1>
+        </div>
+      </div>
+      <form id="category-form" class="form-card">
+        <input type="hidden" name="id" />
+        <div class="form-grid">
+          <label>Nombre <input name="nombre" required /></label>
+          <label>Descripción <input name="descripcion" required /></label>
+        </div>
+        <button type="submit" class="primary-button">Guardar categoría</button>
+        <button type="reset" class="secondary-button">Limpiar</button>
+      </form>
+      <div class="table-panel">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="categories-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/registro.js"></script>
+  <script defer src="../js/data-seed.js"></script>
+  <script defer src="../js/admin.js"></script>
+</body>
+</html>

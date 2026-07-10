@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conciertos Conectados</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Conciertos Conectados</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button id="open-cart" class="cart-toggle" type="button">Carrito (<span id="cart-count">0</span>)</button>
+        <a class="secondary-button" href="admin/admin.html">Administración</a>
+      </div>
+      
+    </div>
+  </header>
+
+  <main class="container public-layout">
+    <section class="public-panel">
+      <div class="hero-card">
+        <p class="eyebrow">Vista cliente</p>
+        <h1>Explora eventos y compra tus entradas</h1>
+        <p>Filtra por categoría y ciudad, agrega conciertos al carrito y confirma tu compra con datos personales.</p>
+      </div>
+
+      <section id="categorias" class="filters-panel">
+        <div class="filter-group">
+          <label for="search-input">Buscar evento</label>
+          <input id="search-input" type="search" placeholder="Buscar por nombre..." />
+        </div>
+        <div class="filter-group">
+          <label for="category-filter">Categoría</label>
+          <select id="category-filter"><option value="">Todas</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="city-filter">Ciudad</label>
+          <select id="city-filter"><option value="">Todas</option></select>
+        </div>
+      </section>
+
+      <section class="events-panel">
+        <h2>Próximos conciertos</h2>
+        <div id="events" class="events-grid"></div>
+      </section>
+
+      <section id="contacto" class="contact-section">
+        <h2>Contacto</h2>
+        <p class="contact-desc">¿Tienes preguntas o sugerencias? Escríbenos y te responderemos a la brevedad.</p>
+        <form id="contact-form" class="contact-form">
+          <div class="form-grid">
+            <label>Nombre <input name="nombre" required /></label>
+            <label>Email <input name="email" type="email" required /></label>
+          </div>
+          <label>Asunto <input name="asunto" required /></label>
+          <label>Mensaje <textarea name="mensaje" rows="4" required></textarea></label>
+          <button type="submit" class="primary-button">Enviar mensaje</button>
+          <p id="contact-message" class="success-message hidden"></p>
+        </form>
+      </section>
+    </section>
+
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+    <aside class="cart-panel hidden" id="cart-panel">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Carrito</p>
+          <h2>Resumen de compra</h2>
+        </div>
+        <button id="close-cart" class="cart-close-button" type="button">Cerrar</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-summary">
+        <div>
+          <span>Total</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+        <button id="checkout-button" class="primary-button" type="button">Pagar</button>
+      </div>
+
+      <form id="checkout-form" class="checkout-form hidden">
+        <h3>Datos del comprador</h3>
+        <div class="form-grid">
+          <label>Identificación <input name="identificacion" required /></label>
+          <label>Nombre completo <input name="nombre" required /></label>
+          <label>Dirección <input name="direccion" required /></label>
+          <label>Teléfono <input name="telefono" required /></label>
+          <label>Email <input name="email" type="email" required /></label>
+          <label>Ciudad <input name="ciudad" required /></label>
+        </div>
+        <button type="submit" class="primary-button">Confirmar compra</button>
+        <p id="checkout-message" class="success-message hidden"></p>
+      </form>
+    </aside>
+  </main>
+
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/registro.js"></script>
+  <script defer src="js/data-seed.js"></script>
+  <script defer src="js/components.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+
+</html>
